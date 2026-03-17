@@ -6,6 +6,6 @@
   "author": {
     "name": "Scott Meyer"
   },
-  "repository": "https://github.com/aetherwing-io/fcp-python",
+  "repository": "https://github.com/os-tack/fcp-python",
   "keywords": ["python", "pylsp", "refactoring", "code-intelligence", "mcp"]
 }
