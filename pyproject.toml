@@ -4,7 +4,7 @@ version = "0.1.6"
 description = "Python Code Intelligence FCP — semantic Python code operations for LLMs via pylsp"
 requires-python = ">=3.11,<3.14"
 dependencies = [
-    "fcp-core>=0.1.17",
+    "fcp-core>=0.1.20",
     "fastmcp>=3.0",
     "python-lsp-server[rope]>=1.12",
 ]
