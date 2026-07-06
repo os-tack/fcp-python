@@ -24,8 +24,6 @@ def register_query_verbs(registry: VerbRegistry) -> None:
 def register_mutation_verbs(registry: VerbRegistry) -> None:
     registry.register_many([
         VerbSpec(verb="rename", syntax="rename SYMBOL NEW_NAME [@selectors...]", category="mutation"),
-        VerbSpec(verb="extract", syntax="extract FUNC_NAME @file:PATH @lines:N-M", category="mutation"),
-        VerbSpec(verb="import", syntax="import SYMBOL @file:PATH @line:N", category="mutation"),
     ])
 
 

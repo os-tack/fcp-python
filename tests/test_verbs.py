@@ -38,14 +38,14 @@ def test_session_verb_count():
 def test_register_mutation_verbs():
     reg = VerbRegistry()
     register_mutation_verbs(reg)
-    for name in ["rename", "extract", "import"]:
+    for name in ["rename"]:
         assert reg.lookup(name) is not None, f"missing mutation verb: {name}"
 
 
 def test_mutation_verb_count():
     reg = VerbRegistry()
     register_mutation_verbs(reg)
-    assert len(reg.verbs) == 3
+    assert len(reg.verbs) == 1
 
 
 def test_reference_card_has_categories():
@@ -65,4 +65,4 @@ def test_all_verbs_registered():
     register_query_verbs(reg)
     register_mutation_verbs(reg)
     register_session_verbs(reg)
-    assert len(reg.verbs) == 17  # 11 query + 3 mutation + 3 session
+    assert len(reg.verbs) == 15  # 11 query + 1 mutation + 3 session

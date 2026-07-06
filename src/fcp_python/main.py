@@ -55,9 +55,7 @@ _registry = _make_registry()
 @mcp.tool(
     description=(
         "Execute Python mutation operations. Examples: "
-        "'rename Config Settings', "
-        "'extract validate @file:server.py @lines:15-30', "
-        "'import os @file:main.py @line:5'"
+        "'rename Config Settings'"
     )
 )
 async def python(ops: list[str]) -> str:
@@ -108,13 +106,10 @@ async def python_help() -> str:
             "  @kind:KIND      — filter by symbol kind (function, class, method, variable, ...)\n"
             "  @module:NAME    — filter by module\n"
             "  @line:N         — filter by line number\n"
-            "  @lines:N-M      — line range for extract\n"
             "  @decorator:NAME — filter by decorator"
         ),
         "Mutation Examples": (
-            '  python ["rename Config Settings"]              — cross-file semantic rename\n'
-            '  python ["extract validate @file:server.py @lines:15-30"] — extract function\n'
-            '  python ["import os @file:main.py @line:5"]     — add missing import'
+            '  python ["rename Config Settings"]              — cross-file semantic rename'
         ),
     }
     return _registry.generate_reference_card(extra)

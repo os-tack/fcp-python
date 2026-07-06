@@ -1,8 +1,8 @@
 # fcp-python
 
-Python Code Intelligence FCP — an MCP server for querying and refactoring Python codebases through intent-level commands.
+Python Code Intelligence FCP — an MCP server for querying Python codebases and performing cross-file symbol rename through intent-level commands.
 
-Wraps [pylsp](https://github.com/python-lsp/python-lsp-server) (python-lsp-server) with [rope](https://github.com/python-rope/rope) for refactoring.
+Wraps [pylsp](https://github.com/python-lsp/python-lsp-server) (python-lsp-server), backed by jedi for navigation/queries and rope for rename. The mutation surface is intentionally narrow: `rename` is the only mutation verb. Everything else (extracting functions, adding imports, etc.) is something the calling LLM should do directly with a normal file edit — routing single-line changes through MCP→DSL→LSP adds ceremony without adding value.
 
 ## Install
 
@@ -24,8 +24,6 @@ python_query    ->  callers process_data
 python_query    ->  map
 python_query    ->  unused
 python          ->  rename Config Settings
-python          ->  extract validate @file:server.py @lines:15-30
-python          ->  import os @file:main.py @line:5
 python_help     ->  (shows reference card)
 ```
 

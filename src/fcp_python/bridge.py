@@ -47,8 +47,6 @@ slipstream fcp python_query "unused @file:src/utils.py"
 #### Refactoring
 ```
 slipstream fcp python "rename Config Settings"
-slipstream fcp python "extract validate @file:server.py @lines:15-30"
-slipstream fcp python "import os @file:main.py @line:5"
 ```
 
 #### Selectors
@@ -57,7 +55,6 @@ slipstream fcp python "import os @file:main.py @line:5"
 - `@module:NAME` — filter by module
 - `@kind:KIND` — function, class, method, variable, constant, module, property
 - `@line:N` — filter by line number
-- `@lines:N-M` — line range (for extract)
 - `@decorator:NAME` — filter by decorator (e.g. `@decorator:staticmethod`)
 """
 
